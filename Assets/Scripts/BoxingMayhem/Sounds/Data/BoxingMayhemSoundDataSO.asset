@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4279c3fff3aacce48917142bdc153a5a, type: 3}
+  m_Name: BoxingMayhemSoundDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.BoxingMayhem.Sound.Data.SoundDataSO
+  Sounds:
+  - Name: CorrectAnswer
+    AudioClip: {fileID: 8300000, guid: 43c0b5354b8b5754d878f5c47f053fd7, type: 3}
+  - Name: IncorrectAnswer
+    AudioClip: {fileID: 8300000, guid: a0227cb28f63f3b49a74f0533b93a8fa, type: 3}
+  - Name: ButtonClick
+    AudioClip: {fileID: 8300000, guid: acdf81264dc813f45b572c9075b95c1a, type: 3}
+  - Name: BGMusic
+    AudioClip: {fileID: 8300000, guid: 1b4bd90d33e8ab349b2e63547a42b9e5, type: 3}
