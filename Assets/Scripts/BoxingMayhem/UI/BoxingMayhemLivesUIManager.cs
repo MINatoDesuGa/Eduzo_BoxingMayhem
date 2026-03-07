@@ -1,10 +1,11 @@
+using Eduzo.Games.Utility;
 using UnityEngine;
 
 namespace Eduzo.Games.BoxingMayhem.UI {
     public class BoxingMayhemLivesUIManager : MonoBehaviour {
         public static event System.Action<Controller.GameOverType> OnBoxingMayhemLivesUp;
 
-        [SerializeField] private Utility.CanvasGroupToggle _livesCanvasGroupToggle;
+        [SerializeField] private CanvasGroup _livesCanvasGroup;
         [SerializeField] private System.Collections.Generic.List<Utility.SpriteToggle> _livesImages;
 
         private Data.BoxingMayhemLivesData _livesData = new();
@@ -30,8 +31,8 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             ActivateInGameEventsListening(true); //TODO: unsubscribe on exit to main menu
             _livesData.Reset();
 
-            if(_livesCanvasGroupToggle.IsVisible()) return;
-            _livesCanvasGroupToggle.Toggle();
+            if(_livesCanvasGroup.IsEnabled()) return;
+            _livesCanvasGroup.EnableCanvasGroup();
         }
         private void OnAnswerValidated(bool isAnswerCorrect) {
             if (!isAnswerCorrect) {

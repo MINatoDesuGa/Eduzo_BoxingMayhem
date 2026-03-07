@@ -2,12 +2,13 @@ using Eduzo.Games.BoxingMayhem.Sound;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Eduzo.Games.Utility;
 
 namespace Eduzo.Games.BoxingMayhem.UI {
     public class BoxingMayhemQuestionFormUIManager : MonoBehaviour {
         public static event System.Action<System.Collections.Generic.List<Data.QuestionData>> OnBoxingMayhemQuestionInit;
 
-        [SerializeField] private Utility.CanvasGroupToggle _questionFormCanvasGroupToggle;
+        [SerializeField] private CanvasGroup _questionFormCanvasGroup;
         [SerializeField] private TMP_InputField _questionField;
         [SerializeField] private TMP_Dropdown _answerDropdown;
         [SerializeField] private Button _confirmQuestionButton;
@@ -57,7 +58,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         }
         private void OnFormCloseButtonClicked() {
             BoxingMayhemSoundManager.Instance.PlaySFX(BoxingMayhemSoundManager.SoundId.ButtonClick);
-            _questionFormCanvasGroupToggle.Toggle();
+            _questionFormCanvasGroup.DisableCanvasGroup();
             OnBoxingMayhemQuestionInit?.Invoke(_questionFormData.GetQuestionCollection());
         }
         #endregion

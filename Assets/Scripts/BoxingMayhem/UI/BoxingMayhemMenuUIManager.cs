@@ -1,4 +1,5 @@
 using Eduzo.Games.BoxingMayhem.Sound;
+using Eduzo.Games.Utility;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         public static event Action OnBoxingMayhemPracticeModeSelected;
         public static event Action OnBoxingMayhemTestModeSelected;
 
-        [SerializeField] private Utility.CanvasGroupToggle _menuCanvasGroupToggle;
+        [SerializeField] private CanvasGroup _menuCanvasGroup;
 
         [SerializeField] private Button _practiceModeButton;
         [SerializeField] private Button _testModeButton;
@@ -34,20 +35,20 @@ namespace Eduzo.Games.BoxingMayhem.UI {
 
             Controller.BoxingMayhemGameFlowHandler.UpdateGameMode(Controller.GameMode.Practice);
             OnBoxingMayhemPracticeModeSelected?.Invoke();
-            _menuCanvasGroupToggle.Toggle();
+            _menuCanvasGroup.DisableCanvasGroup();
         }
         private void OnTestModeSelected() {
             BoxingMayhemSoundManager.Instance.PlaySFX(BoxingMayhemSoundManager.SoundId.ButtonClick);
 
             Controller.BoxingMayhemGameFlowHandler.UpdateGameMode(Controller.GameMode.Test);
             OnBoxingMayhemTestModeSelected?.Invoke();
-            _menuCanvasGroupToggle.Toggle();
+            _menuCanvasGroup.DisableCanvasGroup();
         }
         private void OnQuestionsUpdated(System.Collections.Generic.List<Data.QuestionData> questionDatas) {
-            _menuCanvasGroupToggle.Toggle();
+            _menuCanvasGroup.EnableCanvasGroup();
         }
         private void OnQuitToHome() {
-            _menuCanvasGroupToggle.Toggle();
+            _menuCanvasGroup.EnableCanvasGroup();
         }
         #endregion
     }

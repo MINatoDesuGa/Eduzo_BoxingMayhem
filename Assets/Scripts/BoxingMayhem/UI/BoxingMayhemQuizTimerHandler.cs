@@ -1,4 +1,5 @@
 using Eduzo.Games.BoxingMayhem.Data;
+using Eduzo.Games.Utility;
 using System;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
 
         [Header("UI Elements")]
         [SerializeField] private TMPro.TMP_Text _timerText;
-        [SerializeField] private Utility.CanvasGroupToggle _timerCanvasGroupToggle;
+        [SerializeField] private CanvasGroup _timerCanvasGroup;
 
         [SerializeField] private int _timeLimit = 10;
         private int _timeRemaining;
@@ -42,8 +43,8 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             ///Saving
             Save(SaveType.ActiveTime, _timeLimit - _timeRemaining);
             ///
-            if (!_timerCanvasGroupToggle.IsVisible()) return;
-            _timerCanvasGroupToggle.Toggle();
+            if (!_timerCanvasGroup.IsEnabled()) return;
+            _timerCanvasGroup.DisableCanvasGroup();
         }
         private void OnTestModeSelected() {
             ActivateInGameEventListening(true);
@@ -60,8 +61,8 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             StopTimer();
             _timerCoroutine = StartCoroutine(RunTimer());
 
-            if (_timerCanvasGroupToggle.IsVisible()) return;
-            _timerCanvasGroupToggle.Toggle();
+            if (_timerCanvasGroup.IsEnabled()) return;
+            _timerCanvasGroup.EnableCanvasGroup();
         }
         #endregion
         private void ActivateInGameEventListening(bool active) {

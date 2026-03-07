@@ -470,7 +470,6 @@ GameObject:
   - component: {fileID: 122035598}
   - component: {fileID: 122035604}
   - component: {fileID: 122035603}
-  - component: {fileID: 122035602}
   - component: {fileID: 122035601}
   - component: {fileID: 122035600}
   - component: {fileID: 122035599}
@@ -509,7 +508,7 @@ CanvasGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122035597}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -554,18 +553,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &122035602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122035597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867fa4a58b41b884d856bdea86df9392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Utility.CanvasGroupToggle
 --- !u!114 &122035603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce2cc36bb9b57947b4eba682f66a949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.BoxingMayhem.UI.BoxingMayhemQuestionFormUIManager
-  _questionFormCanvasGroupToggle: {fileID: 122035602}
+  _questionFormCanvasGroup: {fileID: 122035599}
   _questionField: {fileID: 1327996137}
   _answerDropdown: {fileID: 527942467}
   _confirmQuestionButton: {fileID: 793648846}
@@ -642,7 +629,6 @@ GameObject:
   - component: {fileID: 281766294}
   - component: {fileID: 281766300}
   - component: {fileID: 281766297}
-  - component: {fileID: 281766298}
   - component: {fileID: 281766295}
   - component: {fileID: 281766296}
   - component: {fileID: 281766299}
@@ -721,21 +707,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acb87172728df24fa85487d54522d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.BoxingMayhem.UI.MenuUIManager
-  _menuCanvasGroupToggle: {fileID: 281766298}
+  _menuCanvasGroup: {fileID: 281766295}
   _practiceModeButton: {fileID: 3531059034499126297}
   _testModeButton: {fileID: 1876856114}
---- !u!114 &281766298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281766293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867fa4a58b41b884d856bdea86df9392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Utility.CanvasGroupToggle
 --- !u!114 &281766299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,7 +1591,6 @@ GameObject:
   - component: {fileID: 737019253}
   - component: {fileID: 737019254}
   - component: {fileID: 737019256}
-  - component: {fileID: 737019255}
   m_Layer: 5
   m_Name: TimerHolder
   m_TagString: Untagged
@@ -1677,18 +1650,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &737019255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737019250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867fa4a58b41b884d856bdea86df9392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.Utility.CanvasGroupToggle
 --- !u!225 &737019256
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1714,7 +1675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.BoxingMayhem.UI.BoxingMayhemQuizTimerHandler
   _timerText: {fileID: 1623685855}
-  _timerCanvasGroupToggle: {fileID: 737019255}
+  _timerCanvasGroup: {fileID: 737019256}
   _timeLimit: 60
 --- !u!1001 &741212624
 PrefabInstance:
@@ -2498,7 +2459,6 @@ GameObject:
   - component: {fileID: 1083427680}
   - component: {fileID: 1083427677}
   - component: {fileID: 1083427681}
-  - component: {fileID: 1083427678}
   - component: {fileID: 1083427676}
   - component: {fileID: 1083427675}
   - component: {fileID: 1083427679}
@@ -2579,20 +2539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bd12785e2d05f4b9f9113b0402e742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.BoxingMayhem.UI.InGameUIManager
-  _inGameCanvasGroupToggle: {fileID: 1083427678}
+  _inGameCanvasGroup: {fileID: 1083427676}
   _questionText: {fileID: 1542631175}
---- !u!114 &1083427678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083427673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867fa4a58b41b884d856bdea86df9392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Utility.CanvasGroupToggle
 --- !u!114 &1083427679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2646,6 +2594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartsImage (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6499109998582275604, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2672,11 +2624,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 244
+      value: 73.2
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 201
+      value: 60.3
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2749,7 +2701,6 @@ GameObject:
   - component: {fileID: 1154739797}
   - component: {fileID: 1154739796}
   - component: {fileID: 1154739799}
-  - component: {fileID: 1154739798}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -2815,18 +2766,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154739794}
   m_CullTransparentMesh: 1
---- !u!114 &1154739798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154739794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867fa4a58b41b884d856bdea86df9392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.Utility.CanvasGroupToggle
 --- !u!225 &1154739799
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2851,7 +2790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbf17e38c8bb0e4d96c2fdf647666b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoxingMayhemGameOverUIManager
-  _canvasGroupToggle: {fileID: 1154739798}
+  _canvasGroup: {fileID: 1154739799}
   _titleText: {fileID: 2129309079}
   _scoreText: {fileID: 757602938}
   _replayButton: {fileID: 77103307}
@@ -2868,9 +2807,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartsImage (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6499109998582275604, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_Pivot.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_Pivot.y
@@ -2894,11 +2837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 244
+      value: 73.2
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 201
+      value: 60.3
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2930,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -36.600037
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3298,6 +3241,7 @@ RectTransform:
   - {fileID: 122035598}
   - {fileID: 281766294}
   - {fileID: 1083427674}
+  - {fileID: 1528595745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3631,7 +3575,6 @@ GameObject:
   - component: {fileID: 1343710331}
   - component: {fileID: 1343710334}
   - component: {fileID: 1343710333}
-  - component: {fileID: 1343710332}
   m_Layer: 5
   m_Name: LivesHolder
   m_TagString: Untagged
@@ -3661,18 +3604,6 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: 0}
   m_SizeDelta: {x: 230, y: 125}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1343710332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343710330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867fa4a58b41b884d856bdea86df9392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.Utility.CanvasGroupToggle
 --- !u!225 &1343710333
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3697,7 +3628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6963f030266d24a9d7c2007a0db584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Eduzo.Games.BoxingMayhem.UI.BoxingMayhemLivesUIManager
-  _livesCanvasGroupToggle: {fileID: 1343710332}
+  _livesCanvasGroup: {fileID: 1343710333}
   _livesImages:
   - {fileID: 1873438255}
   - {fileID: 1454592220}
@@ -3979,12 +3910,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528595742}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1294747289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1542339628
 GameObject:
@@ -6073,7 +6004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_Pivot.y
@@ -6097,11 +6028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 244
+      value: 73.2
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 201
+      value: 60.3
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6133,7 +6064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 36.599976
       objectReference: {fileID: 0}
     - target: {fileID: 8936713555688129180, guid: f0093f3e4825c6343bddaf3aeba84e7a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6163,6 +6094,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1294747289}
-  - {fileID: 1528595745}
   - {fileID: 2062832302}
   - {fileID: 1265983050}

@@ -1,4 +1,5 @@
 using Eduzo.Games.BoxingMayhem.Sound;
+using Eduzo.Games.Utility;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         public static event System.Action OnBoxingMayhemReplay;
         public static event System.Action OnBoxingMayhemHome;
 
-        [SerializeField] private Utility.CanvasGroupToggle _canvasGroupToggle;
+        [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private TMP_Text _titleText;
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private Button _replayButton;
@@ -34,14 +35,14 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         private void OnReplayButtonClicked() {
             BoxingMayhemSoundManager.Instance.PlaySFX(BoxingMayhemSoundManager.SoundId.ButtonClick);
 
-            _canvasGroupToggle.Toggle();
+            _canvasGroup.DisableCanvasGroup();
             OnBoxingMayhemReplay?.Invoke();
         }
 
         private void OnHomeButtonClicked() {
             BoxingMayhemSoundManager.Instance.PlaySFX(BoxingMayhemSoundManager.SoundId.ButtonClick);
 
-            _canvasGroupToggle.Toggle();
+            _canvasGroup.DisableCanvasGroup();
             OnBoxingMayhemHome?.Invoke();
         }
         private void OnPracticeModeSelected() {
@@ -51,7 +52,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             _scoreText.gameObject.SetActive(true);
         }
         private void HandleGameOver(Controller.GameOverType gameOverType, float score) {
-            if (_canvasGroupToggle.IsVisible()) return;
+            if (_canvasGroup.IsEnabled()) return;
             switch (gameOverType) {
                 case Controller.GameOverType.TimeUp:
                     _titleText.text = "Time Up";
@@ -65,7 +66,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
                     break;
             }
             _scoreText.text = $"Final Score: {score:F2}/100";
-            _canvasGroupToggle.Toggle();
+            _canvasGroup.EnableCanvasGroup();
         }
         #endregion
     }

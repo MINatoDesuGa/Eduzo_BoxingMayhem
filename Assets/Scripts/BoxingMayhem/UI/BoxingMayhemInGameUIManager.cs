@@ -1,9 +1,10 @@
+using Eduzo.Games.Utility;
 using TMPro;
 using UnityEngine;
 
 namespace Eduzo.Games.BoxingMayhem.UI {
     public class BoxingMayhemInGameUIManager : MonoBehaviour {
-        [SerializeField] private Utility.CanvasGroupToggle _inGameCanvasGroupToggle;
+        [SerializeField] private CanvasGroup _inGameCanvasGroup;
         [SerializeField] private TMP_Text _questionText;
 
         #region Mono
@@ -25,10 +26,10 @@ namespace Eduzo.Games.BoxingMayhem.UI {
 
         #region Event Listeners
         private void OnPracticeModeSelected() {
-            _inGameCanvasGroupToggle.Toggle();
+            _inGameCanvasGroup.EnableCanvasGroup();
         }
         private void OnTestModeSelected() {
-            _inGameCanvasGroupToggle.Toggle();
+            _inGameCanvasGroup.EnableCanvasGroup();
         }
         private void OnQuestionsInit(System.Collections.Generic.List<Data.QuestionData> questionDatas) {
 #if UNITY_EDITOR
@@ -41,7 +42,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             _questionText.SetText(question);
         }
         private void OnQuitToHome() {
-            _inGameCanvasGroupToggle.Toggle();
+            _inGameCanvasGroup.DisableCanvasGroup();
         }
         #endregion
         
