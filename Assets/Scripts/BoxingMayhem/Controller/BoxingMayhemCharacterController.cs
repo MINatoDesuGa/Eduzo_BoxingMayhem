@@ -6,6 +6,7 @@ namespace Eduzo.Games.BoxingMayhem.Controller {
 
         [Header("Animation")]
         [SerializeField] private Animator _animator;
+        private Vector3 _oppositeVectorValue = new Vector3(-1 , 1, 1);
         #region Mono
         private void OnEnable() {
             UI.BoxingMayhemPunchBagUIManager.OnBoxingMayhemPunchBagClick += OnPunchBagClicked;
@@ -18,9 +19,9 @@ namespace Eduzo.Games.BoxingMayhem.Controller {
         #region Event Listeners
         private void OnPunchBagClicked(bool isTrueAnswerBag) {
             if(isTrueAnswerBag) {
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = _oppositeVectorValue;
             } else {
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = Vector3.one;
             }
             _animator.SetTrigger(PUNCH_TRIGGER); //TODO : differentiate between left and right punch bags
         }
