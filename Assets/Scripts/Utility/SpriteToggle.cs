@@ -21,6 +21,7 @@ namespace Eduzo.Games.Utility {
         #endregion
         public void Toggle() {
             _image.sprite = _defaultSprite ? _toggleSprite : _defaultSprite;
+            transform.DoPunchScaleAnimation();
         }
         
     }
