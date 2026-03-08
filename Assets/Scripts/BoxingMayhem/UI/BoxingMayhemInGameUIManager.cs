@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Eduzo.Games.Utility;
 using TMPro;
 using UnityEngine;
@@ -6,7 +7,11 @@ namespace Eduzo.Games.BoxingMayhem.UI {
     public class BoxingMayhemInGameUIManager : MonoBehaviour {
         [SerializeField] private CanvasGroup _inGameCanvasGroup;
         [SerializeField] private TMP_Text _questionText;
+        [SerializeField] private UnityEngine.UI.Image _answerFeedbackImage;
+        [SerializeField] private Sprite _correctFeedbackSprite;
+        [SerializeField] private Sprite _incorrectFeedbackSprite;
 
+        private Tween _answerFeedbackTween;
         #region Mono
         private void OnEnable() {
             BoxingMayhemMenuUIManager.OnBoxingMayhemPracticeModeSelected += OnPracticeModeSelected;
@@ -14,6 +19,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             BoxingMayhemQuestionFormUIManager.OnBoxingMayhemQuestionInit += OnQuestionsInit;
             Controller.BoxingMayhemGameFlowHandler.OnBoxingMayhemQuestionUpdate += UpdateQuestionText;
             BoxingMayhemGameOverUIManager.OnBoxingMayhemHome += OnQuitToHome;
+            Controller.BoxingMayhemGameFlowHandler.OnBoxingMayhemAnswerValidated += OnAnswerValidated;
         }
         private void OnDisable() {
             BoxingMayhemMenuUIManager.OnBoxingMayhemPracticeModeSelected -= OnPracticeModeSelected;
@@ -21,6 +27,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             BoxingMayhemQuestionFormUIManager.OnBoxingMayhemQuestionInit -= OnQuestionsInit;
             Controller.BoxingMayhemGameFlowHandler.OnBoxingMayhemQuestionUpdate -= UpdateQuestionText;
             BoxingMayhemGameOverUIManager.OnBoxingMayhemHome -= OnQuitToHome;
+            Controller.BoxingMayhemGameFlowHandler.OnBoxingMayhemAnswerValidated -= OnAnswerValidated;
         }
         #endregion
 
@@ -44,7 +51,13 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         private void OnQuitToHome() {
             _inGameCanvasGroup.DisableCanvasGroup();
         }
+        private void OnAnswerValidated(bool isCorrectAns) {
+            _answerFeedbackImage.sprite = (isCorrectAns ? _correctFeedbackSprite : _incorrectFeedbackSprite);
+            _answerFeedbackTween?.Kill();
+            _answerFeedbackTween = _answerFeedbackImage.transform.DOScale(Vector3.one, 0.5f).OnComplete(()=> {
+                _answerFeedbackTween = _answerFeedbackImage.transform.DOScale(Vector3.zero, 0.25f);
+            });
+        }
         #endregion
-        
     }
 }

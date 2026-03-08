@@ -112,7 +112,9 @@ namespace Eduzo.Games.BoxingMayhem.Controller {
                 case GameMode.Test:
                     ///Update Score and invoke saving///
                     Save(Data.SaveType.Score, totalScore);
+#if !UNITY_EDITOR //enable it as per dev needs
                     Invoke(nameof(DelayInvokeSaveResult), SAVE_DELAY);
+#endif
                     ///------------------------------///
                     OnBoxingMayhemGameOver?.Invoke(gameOverType, totalScore);
                     UpdateGameState(GameState.GameOver);
@@ -145,7 +147,7 @@ namespace Eduzo.Games.BoxingMayhem.Controller {
             OnSaveDataHandlerInit?.Invoke(SaveDataHandler);
         }
         public void Save(Data.SaveType saveType, object data = null) {
-            switch(saveType) {
+            switch (saveType) {
                 case Data.SaveType.Score:
                     SaveDataHandler.UpdateSaveData(Data.SaveType.Score, data);
                     break;

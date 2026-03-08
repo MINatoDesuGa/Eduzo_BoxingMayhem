@@ -12,6 +12,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         [SerializeField] private bool _isTrueAnswerBag;
         [SerializeField] private RectTransform _parentTransform;
         [SerializeField] private Outline _bagOutline;
+        [SerializeField] private GameObject _punchImpactAnimationObject;
 
         private Button _punchBagButton;
         private Tween _punchBagAnimationTween;
@@ -32,7 +33,8 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             //print($"{_isTrueAnswerBag} bag click");
             OnBoxingMayhemPunchBagClick?.Invoke(_isTrueAnswerBag);
             _bagOutline.enabled = true;
-            Invoke(nameof(DelayDisableOutline), 0.1f);
+            _punchImpactAnimationObject.SetActive(true);
+            Invoke(nameof(DelayDisable), PUNCH_BAG_ANIMATION_DURATION);
             if (_isTrueAnswerBag) {
                 DoPunchBagAnimation(-PUNCH_BAG_Z_ROTATION_MAX_OFFSET);
             } else {
@@ -41,8 +43,9 @@ namespace Eduzo.Games.BoxingMayhem.UI {
 
         }
         #endregion
-        private void DelayDisableOutline() {
+        private void DelayDisable() {
             _bagOutline.enabled = false;
+            _punchImpactAnimationObject.SetActive(false);
         }
         private void DoPunchBagAnimation(float maxZOffset) {
             _punchBagAnimationTween?.Kill();
