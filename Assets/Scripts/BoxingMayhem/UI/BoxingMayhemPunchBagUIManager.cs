@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Eduzo.Games.Utility;
 
 namespace Eduzo.Games.BoxingMayhem.UI {
     [RequireComponent(typeof(Button))]
@@ -12,10 +13,10 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         [SerializeField] private bool _isTrueAnswerBag;
         [SerializeField] private RectTransform _parentTransform;
         [SerializeField] private Outline _bagOutline;
-        [SerializeField] private GameObject _punchImpactAnimationObject;
+        [SerializeField] private Image _punchImpactImage;
 
         private Button _punchBagButton;
-        private Tween _punchBagAnimationTween;
+        private Tween _punchBagAnimationTween, _punchImpactAnimationTween;
         #region Mono
         private void Awake() {
             _punchBagButton = GetComponent<Button>();
@@ -33,7 +34,8 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             //print($"{_isTrueAnswerBag} bag click");
             OnBoxingMayhemPunchBagClick?.Invoke(_isTrueAnswerBag);
             _bagOutline.enabled = true;
-            _punchImpactAnimationObject.SetActive(true);
+            //_punchImpactAnimationObject.SetActive(true);
+            DoPunchImpactAnimation();
             Invoke(nameof(DelayDisable), PUNCH_BAG_ANIMATION_DURATION);
             if (_isTrueAnswerBag) {
                 DoPunchBagAnimation(-PUNCH_BAG_Z_ROTATION_MAX_OFFSET);
@@ -45,7 +47,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         #endregion
         private void DelayDisable() {
             _bagOutline.enabled = false;
-            _punchImpactAnimationObject.SetActive(false);
+            //_punchImpactAnimationObject.SetActive(false);
         }
         private void DoPunchBagAnimation(float maxZOffset) {
             _punchBagAnimationTween?.Kill();
@@ -53,6 +55,14 @@ namespace Eduzo.Games.BoxingMayhem.UI {
                     _parentTransform.localRotation.eulerAngles + (Vector3.forward * maxZOffset),
                     PUNCH_BAG_ANIMATION_DURATION
                 );
+        }
+        private void DoPunchImpactAnimation() {
+            _punchImpactAnimationTween?.Kill();
+            _punchImpactImage.transform.localScale = Vector3.zero;
+            _punchImpactImage.DOFade(1f, 0.1f);
+            _punchImpactAnimationTween = _punchImpactImage.transform.DOScale(Vector3.one, PUNCH_BAG_ANIMATION_DURATION).OnComplete(()=> {
+                _punchImpactImage.DOFade(0f, PUNCH_BAG_ANIMATION_DURATION);
+            });
         }
     }
 }

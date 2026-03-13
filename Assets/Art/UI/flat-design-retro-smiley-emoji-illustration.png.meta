@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: b66c1d6c2b7b8194e9f820c56f4ef32d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4639766114656603767
+    second: flat-design-retro-smiley-emoji-illustration_0
+  - first:
+      213: 7158380365628340521
+    second: flat-design-retro-smiley-emoji-illustration_1
+  - first:
+      213: 7790183784015718756
+    second: flat-design-retro-smiley-emoji-illustration_2
+  - first:
+      213: 3541445571155774072
+    second: flat-design-retro-smiley-emoji-illustration_3
+  - first:
+      213: 2039325079365833028
+    second: flat-design-retro-smiley-emoji-illustration_4
+  - first:
+      213: 6276677732084553710
+    second: flat-design-retro-smiley-emoji-illustration_5
+  - first:
+      213: 6875483628047023935
+    second: flat-design-retro-smiley-emoji-illustration_6
+  - first:
+      213: -6510101274687462547
+    second: flat-design-retro-smiley-emoji-illustration_7
+  - first:
+      213: -3569134807146045485
+    second: flat-design-retro-smiley-emoji-illustration_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flat-design-retro-smiley-emoji-illustration_0
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1341
+        width: 478
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e4001e2b2c36040800000000000000
+      internalID: 4639766114656603767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat-design-retro-smiley-emoji-illustration_1
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1341
+        width: 478
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 929786c040da75360800000000000000
+      internalID: 7158380365628340521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat-design-retro-smiley-emoji-illustration_2
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 1341
+        width: 478
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469e34d90ea4c1c60800000000000000
+      internalID: 7790183784015718756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat-design-retro-smiley-emoji-illustration_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 766
+        width: 478
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ace1ccbfdb52130800000000000000
+      internalID: 3541445571155774072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CorrectAnsEmoji
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 766
+        width: 478
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4415529da532d4c10800000000000000
+      internalID: 2039325079365833028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrongAnsEmoji
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 766
+        width: 478
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee7118e542d3b1750800000000000000
+      internalID: 6276677732084553710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat-design-retro-smiley-emoji-illustration_6
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 173
+        width: 478
+        height: 523
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fb1cc8eef9a6f50800000000000000
+      internalID: 6875483628047023935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat-design-retro-smiley-emoji-illustration_7
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 191
+        width: 544
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63af66f16977a5a0800000000000000
+      internalID: -6510101274687462547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flat-design-retro-smiley-emoji-illustration_8
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 191
+        width: 478
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dfd3909dc2e77ec0800000000000000
+      internalID: -3569134807146045485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4540a96708d5f544da092f03107ae45b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CorrectAnsEmoji: 2039325079365833028
+      WrongAnsEmoji: 6276677732084553710
+      flat-design-retro-smiley-emoji-illustration_0: 4639766114656603767
+      flat-design-retro-smiley-emoji-illustration_1: 7158380365628340521
+      flat-design-retro-smiley-emoji-illustration_2: 7790183784015718756
+      flat-design-retro-smiley-emoji-illustration_3: 3541445571155774072
+      flat-design-retro-smiley-emoji-illustration_6: 6875483628047023935
+      flat-design-retro-smiley-emoji-illustration_7: -6510101274687462547
+      flat-design-retro-smiley-emoji-illustration_8: -3569134807146045485
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -54,9 +54,8 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         private void OnAnswerValidated(bool isCorrectAns) {
             _answerFeedbackImage.sprite = (isCorrectAns ? _correctFeedbackSprite : _incorrectFeedbackSprite);
             _answerFeedbackTween?.Kill();
-            _answerFeedbackTween = _answerFeedbackImage.transform.DOScale(Vector3.one, 0.5f).OnComplete(()=> {
-                _answerFeedbackTween = _answerFeedbackImage.transform.DOScale(Vector3.zero, 0.25f);
-            });
+
+            _answerFeedbackTween = _answerFeedbackImage.transform.DoScaleAnimation();
         }
         #endregion
     }
