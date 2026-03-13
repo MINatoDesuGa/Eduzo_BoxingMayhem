@@ -1,10 +1,12 @@
 using Eduzo.Games.BoxingMayhem.Sound;
 using System;
 using UnityEngine;
+using Eduzo.Games.Utility;
 
 namespace Eduzo.Games.BoxingMayhem.Controller {
     public class BoxingMayhemGameFlowHandler : MonoBehaviour, Interfaces.ISaveable {
         private const float SAVE_DELAY = 1f;
+        private const float NEXT_QUESTION_LOAD_DELAY = 1f;
 
         public static event Action<Data.BoxingMayhemSaveDataHandler> OnSaveDataHandlerInit;
         public static event Action<bool> OnBoxingMayhemAnswerValidated;
@@ -12,6 +14,7 @@ namespace Eduzo.Games.BoxingMayhem.Controller {
         public static event Action<GameOverType, float> OnBoxingMayhemGameOver;
         public static GameMode CurrentGameMode { get; private set; }
 
+        [SerializeField] private GameObject _interactionBlocker;
 
         private GameState _currentGameState;
 
@@ -63,8 +66,8 @@ namespace Eduzo.Games.BoxingMayhem.Controller {
         }
         private void OnPunchBagClicked(bool isTrueAnswerBag) {
             ValidateAnswer(isTrueAnswerBag);
-
-            LoadNextQuestion();
+            _interactionBlocker.Enable();
+            Invoke(nameof(DelayLoadNextQuestion), NEXT_QUESTION_LOAD_DELAY);
         }
         private void OnGameReplay() {
             UpdateGameState(GameState.Playing);
@@ -78,6 +81,13 @@ namespace Eduzo.Games.BoxingMayhem.Controller {
             BoxingMayhemSoundManager.Instance.StopMusic();
         }
         #endregion
+        private void DelayLoadNextQuestion() {
+            LoadNextQuestion();
+            Invoke(nameof(DelayDisableInteractionBlocker), NEXT_QUESTION_LOAD_DELAY); //wait for question text animation
+        }
+        private void DelayDisableInteractionBlocker() {
+            _interactionBlocker.Disable();
+        }
         private void ValidateAnswer(bool userAnswer) {
             var correctAnswer = _questionFormData.GetCurrentQuestionData().Answer;
             var isAnswerCorrect = correctAnswer == userAnswer;

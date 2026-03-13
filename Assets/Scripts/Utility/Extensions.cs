@@ -19,11 +19,20 @@ namespace Eduzo.Games.Utility {
         }
         #endregion
 
+        #region Game Object
+        public static void Enable(this GameObject gameObject) {
+            gameObject.SetActive(true);
+        }
+        public static void Disable(this GameObject gameObject) {
+            gameObject.SetActive(false);
+        }
+        #endregion
+
         #region ANIMATION
         private const float PUNCH_SCALE_DURATION = 0.2f;
         private const float PUNCH_SCALE_FACTOR = 0.01f;
         private const float SCALE_UP_DURATION = 0.5f;
-        private const float SCALE_DOWN_DURATION = 0.25f;
+        private const float SCALE_DOWN_DURATION = 0.5f;
 
         public static void DoPunchScaleAnimation(this Transform transform) {
             transform.DOPunchScale(transform.localScale + (Vector3.one * PUNCH_SCALE_FACTOR), PUNCH_SCALE_DURATION);

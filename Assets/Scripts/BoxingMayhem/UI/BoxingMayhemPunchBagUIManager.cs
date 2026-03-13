@@ -9,6 +9,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
         public static event System.Action<bool> OnBoxingMayhemPunchBagClick;
         private const float PUNCH_BAG_Z_ROTATION_MAX_OFFSET = 10f;
         private const float PUNCH_BAG_ANIMATION_DURATION = 0.25f;
+        private const float PUNCH_IMPACT_ANIMATION_FADE_DURATION = 0.5f;
 
         [SerializeField] private bool _isTrueAnswerBag;
         [SerializeField] private RectTransform _parentTransform;
@@ -61,7 +62,7 @@ namespace Eduzo.Games.BoxingMayhem.UI {
             _punchImpactImage.transform.localScale = Vector3.zero;
             _punchImpactImage.DOFade(1f, 0.1f);
             _punchImpactAnimationTween = _punchImpactImage.transform.DOScale(Vector3.one, PUNCH_BAG_ANIMATION_DURATION).OnComplete(()=> {
-                _punchImpactImage.DOFade(0f, PUNCH_BAG_ANIMATION_DURATION);
+                _punchImpactImage.DOFade(0f, PUNCH_IMPACT_ANIMATION_FADE_DURATION);
             });
         }
     }
